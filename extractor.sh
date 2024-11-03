@@ -37,9 +37,13 @@ case $verify in
    unzip $verify
    ;;
 
+   *.rpm)
+   echo "Extracting .rpm package..."
+   rpm -i $verify
+
    *)
    echo "Error: File type not supported or not found."
-   echo "Supported: .deb, .zip, .tar.xz, .tar.gz"
+   echo "Supported: .deb, .zip, .tar.xz, .tar.gz, .rpm"
    exit 1
    ;;
 
