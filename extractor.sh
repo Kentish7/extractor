@@ -15,31 +15,32 @@ fi
 
 # Continues if the user types "y"
 if [[ $verify == y ]]; then 
-case $verify in
+case $lastDownloaded in
 	
    *.deb)
    echo "Extracting .deb package..."
-   sudo dpkg -i $verify
+   sudo dpkg -i $lastDownloaded
    ;;
 
    *.tar.xz)
    echo "Extracting .tar.xz..."
-   tar -xf $verify
+   tar -xf $lastDownloaded
    ;;
 
    *.tar.gz)
    echo "Extracting .tar.gz package..."
-   tar -xzf $verify
+   tar -xzf $lastDownloaded
    ;;
 
    *.zip)
    echo "Extracting .zip package..."
-   unzip $verify
+   unzip $lastDownloaded
    ;;
 
    *.rpm)
    echo "Extracting .rpm package..."
-   rpm -i $verify
+   rpm -i $lastDownloaded
+   ;;
 
    *)
    echo "Error: File type not supported or not found."
