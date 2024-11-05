@@ -32,6 +32,11 @@ case $lastDownloaded in
    tar -xzf $lastDownloaded
    ;;
 
+   *.tar.bz2)
+   echo "Extracting .tar.bz2 package..."
+   tar -xjf $lastDownloaded
+   ;;
+
    *.zip)
    echo "Extracting .zip package..."
    unzip $lastDownloaded
