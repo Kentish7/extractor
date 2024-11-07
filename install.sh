@@ -47,6 +47,12 @@ case $lastDownloaded in
    rpm -i $lastDownloaded
    ;;
 
+ ##  *.sh)
+ ##  echo "Giving exe permission and installing..."
+ ##  chmod +x $lastDownloaded
+ ##  sudo ./$lastdownloaded	
+ ##  ;;
+
    *)
    echo "Error: File type not supported or not found."
    echo "Supported: .deb, .zip, .tar.xz, .tar.gz, .rpm"
